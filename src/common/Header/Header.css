@@ -13,3 +13,8 @@
 .logoImgHeader{
     height: 4em;
 }
+
+.headerWebsiteName{
+    color: #ffffff;
+    user-select: none;
+}
