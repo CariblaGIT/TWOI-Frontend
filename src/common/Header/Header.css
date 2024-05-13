@@ -1,0 +1,20 @@
+.headerDesign{
+    width: 100vw;
+    height: 8vh;
+
+    background-color: #cf4c4c;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logoImgHeader{
+    height: 4em;
+}
+
+.headerWebsiteName{
+    color: #ffffff;
+    user-select: none;
+}

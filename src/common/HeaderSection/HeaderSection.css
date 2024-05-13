@@ -1,0 +1,55 @@
+.headerSectionDropdownButton {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    padding: 0.6em 0.9em;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 0.9em;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .headerSectionDropdownContent {
+    display: none;
+    font-size: 13px;
+    position: absolute;
+    z-index: 1;
+    width: 8em;
+    background-color: #212121;
+    border: 2px solid #d33232;
+    border-radius: 0 0 0.9em 0.9em;
+    box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.2);
+  }
+
+  .headerSectionDropdownContent a {
+    color: #d33232;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+    transition: 0.1s;
+    text-align: start;
+    user-select: none;
+  }
+
+  .headerSectionDropdownContent a:hover {
+    background-color: #d33232;
+    color: #212121;
+  }
+
+  .headerSectionDropdownContent a:focus {
+    background-color: #212121;
+    color: #d33232;
+  }
+  
+  .headerSectionDropdownContent #achievements:hover {
+    border-radius: 0 0 0.8em 0.8em;
+  }
+  
+  .headerSectionDesign:hover button {
+    border-radius: 0.9em 0.9em 0 0;
+  }
+  
+  .headerSectionDesign:hover .headerSectionDropdownContent {
+    display: block;
+  }
