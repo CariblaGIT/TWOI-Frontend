@@ -2,7 +2,7 @@
     width: 100vw;
     height: 8vh;
 
-    background-color: #cf4c4c;
+    background-color: var(--light-red);
 
     display: flex;
     flex-direction: row;

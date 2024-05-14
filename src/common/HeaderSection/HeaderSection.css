@@ -17,13 +17,13 @@
     z-index: 1;
     width: 8em;
     background-color: #212121;
-    border: 2px solid #d33232;
+    border: 2px solid var(--electric-red);
     border-radius: 0 0 0.9em 0.9em;
     box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.2);
   }
 
   .headerSectionDropdownContent a {
-    color: #d33232;
+    color: var(--electric-red);
     padding: 8px 10px;
     text-decoration: none;
     display: block;
@@ -33,13 +33,13 @@
   }
 
   .headerSectionDropdownContent a:hover {
-    background-color: #d33232;
+    background-color: var(--electric-red);
     color: #212121;
   }
 
   .headerSectionDropdownContent a:focus {
     background-color: #212121;
-    color: #d33232;
+    color: var(--electric-red);
   }
   
   .headerSectionDropdownContent #achievements:hover {
