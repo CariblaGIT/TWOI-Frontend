@@ -1,0 +1,113 @@
+.registerDesign{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--secondary-red);
+
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+}
+
+.registerForm{
+    height: 80vh;
+    width: 35em;
+
+    margin: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--grey-box-boundary)
+}
+
+.appNameRegister{
+    margin: 0.2em;
+    color: #fff;
+}
+
+.lineRegister{
+    width: 20em;
+    height: 47px;
+    border-bottom: 1px solid black;
+    position: relative;
+    top: -2em;
+    user-select: none;
+    z-index: -1;
+}
+
+.lineRegister::after{
+    content: "O";
+    background-color: #fff;
+    padding: 1em;
+    position: relative;
+    bottom: -2.5em;
+}
+
+.politicsText{
+    width: 80vw;
+    text-align: justify;
+    margin: 0.5em;
+    font-size: 10px;
+}
+
+.inputError, .registerError, .registerSuccess{
+    font-weight: bold;
+    white-space: pre;
+    margin-top: 0.3em;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.inputError, .registerError{
+    color: red;
+}
+
+.registerSuccess{
+    color: green;
+}
+
+.inputError:empty, .registerError:empty, .registerSuccess:empty{
+    display: none;
+}
+
+.loginText{
+    margin: 0.5em;
+}
+
+.loginLink{
+    cursor: pointer;
+}
+
+.loginContent{
+    height: 15vh;
+    width: 35em;
+
+    margin: 1em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--grey-box-boundary);
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .registerForm{
+        border-width: 0; 
+    }
+
+    .loginContent{
+        border-width: 0; 
+    }
+}

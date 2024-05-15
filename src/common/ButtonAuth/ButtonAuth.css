@@ -1,0 +1,27 @@
+.buttonAuthDesign {
+    color: #fff;
+    background-color: var(--main-red);
+    font-weight: bold;
+    user-select: none;
+    border-style: none;
+    outline: none;
+    height: fit-content;
+    width: 20em;
+    padding: 0.8em 1em;
+    margin: 1em;
+    border-radius: 0.5em;
+    transition: 1s;
+    pointer-events: all;
+}
+
+.buttonAuthDesign:hover{
+    background-color: var(--main-red-secondary);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.buttonAuthDesign:disabled{
+    background-color: var(--grey-disabled);
+    cursor: none;
+    pointer-events: none;
+}
