@@ -1,3 +1,17 @@
+.entityDesign{
+    min-height: 92vh;
+    width: 100vw;
+    background-color: #181818;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .entityHeader{
     font-family: "Press Start 2P", system-ui;
     background-color: var(--main-red-secondary);
@@ -5,4 +19,47 @@
     color: #ffffff;
     border-radius: .1em;
     margin: .5em;
+}
+
+.entitySubHeader{
+    text-align: justify;
+    white-space: pre-line;
+    color: #ffffff;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+.tableEntity{
+    width: 100%;
+    background-color: var(--main-red-secondary);
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #FFFFFF;
+    border-style: solid;
+    color: #FFFFFF;
+    margin: 0.2em;
+}
+
+td{
+    border-width: 2px;
+    border-color: #FFFFFF;
+    border-style: solid;
+    padding: 5px;
+}
+
+th{
+    border-width: 2px;
+    background-color: var(--main-dark-red);
+    border-color: #FFFFFF;
+    border-style: solid;
+    padding: 5px;
+}
+
+.centerTableContent{
+    text-align: justify;
+}
+
+.itemsImgs{
+    height: 5em;
+    width: 5em;
 }
