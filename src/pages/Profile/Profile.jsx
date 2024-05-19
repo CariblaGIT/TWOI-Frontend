@@ -45,8 +45,11 @@ export const Profile = () => {
         const getUserProfileData = async () => {
             try {
                 const fetched = await getProfileService(userToken)
+                setUser({
+                    username: fetched.data.username,
+                    avatar: fetched.data.avatar
+                })
                 setLoadedUser(true)
-                setUser(fetched.data)
             } catch (error) {
                 console.log(error)
             }
