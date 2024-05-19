@@ -37,7 +37,7 @@ export const Profile = () => {
 
     useEffect(() => {
         if (!userToken) {
-            navigate("/accounts/login")
+            navigate("/home")
         }
     }, [userToken])
 
@@ -134,8 +134,17 @@ export const Profile = () => {
         navigate("/login")
     }
 
+    const navigateToMarks = () => {
+        navigate("/marks")
+    }
+
     return (
         <div className="profileDesign">
+            <FormButton
+                buttonText={"MARKS"}
+                className={"formButtonDesign"}
+                onClickFunction={navigateToMarks}
+            />
             <div className="profileContent">
                 <img className="avatarImgProfile" src={avatar}/>
                 {/* {write !== "disabled" ? (
