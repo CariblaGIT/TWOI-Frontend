@@ -15,14 +15,32 @@ export const userSlice = createSlice({
       logout: (state, action) => {
         return {
           ...state,
-          ...action.payload
+          credentials: null
+        }
+      },
+      achievement: (state, action) => {
+        return {
+            ...state,
+            ...action.payload
+        }
+      },
+      character: (state, action) => {
+        return {
+            ...state,
+            ...action.payload
+        }
+      },
+      profile: (state, action) => {
+        return {
+            ...state,
+            ...action.payload
         }
       }
     }
 
 });
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout, achievement, character, profile } = userSlice.actions;
 
 export const userData = (state) => state.user;
 

@@ -7,6 +7,18 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  --white-bone: #fafafa;
+  --main-red: #d33232;
+  --main-red-transparent: #d332327f;
+  --main-red-secondary: #d13f3f;
+  --light-red: #cf4c4c;
+  --electric-red: #d33232;
+  --secondary-red: #f85757;
+  --main-dark-red: #b90000;
+  --grey-box-boundary: #dbdbdb;
+  --grey-profile: #b1b1b1;
+  --grey-disabled: #6d6d6d;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
