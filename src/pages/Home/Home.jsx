@@ -22,19 +22,19 @@ export const Home = () => {
                 <h2 className="headerSectionsSection">Content</h2>
                 <div className="tableContent">
                     <div className="sectionLink" onClick={() => navigateToEntity("achievements")}>
-                        <img className="sectionImg" src="../../../public/sections/achievements.png"/>
+                        <img className="sectionImg" src="/sections/achievements.png"/>
                         Achievements
                     </div>
                     <div className="sectionLink" onClick={() => navigateToEntity("characters")}>
-                        <img className="sectionImg" src="../../../public/sections/characters.png"/>
+                        <img className="sectionImg" src="/sections/characters.png"/>
                         Characters
                     </div>
                     <div className="sectionLink" onClick={() => navigateToEntity("items")}>
-                        <img className="sectionImg" src="../../../public/sections/items.png"/>
+                        <img className="sectionImg" src="/sections/items.png"/>
                         Items
                     </div>
                     <div className="sectionLink" onClick={() => navigateToEntity("pickups")}>
-                        <img className="sectionImg" src="../../../public/sections/pickups.png"/>
+                        <img className="sectionImg" src="/sections/pickups.png"/>
                         Pickups
                     </div>
                 </div>
