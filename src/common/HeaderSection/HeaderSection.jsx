@@ -1,10 +1,13 @@
 import "./HeaderSection.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import { useSelector } from "react-redux";
+import { userData } from "../../app/slices/userSlice";
 
 export const HeaderSection = () => {
     const navigate = useNavigate()
-    const [isDropdownVisible, setDropdownVisible] = useState(false);
+    const [isDropdownVisible, setDropdownVisible] = useState(false)
+    const userToken = (useSelector(userData)).credentials.token
 
     const navigateToCharacters = () => {
         navigate("entity/characters")
@@ -26,6 +29,16 @@ export const HeaderSection = () => {
         hideDropdown()
     }
 
+    const navigateToLogin = () => {
+        navigate("login")
+        hideDropdown()
+    }
+
+    const navigateToProfile = () => {
+        navigate("profile")
+        hideDropdown()
+    }
+
     const toggleDropdown = () => {
         setDropdownVisible(!isDropdownVisible);
     }
@@ -39,12 +52,22 @@ export const HeaderSection = () => {
             <button className="headerSectionDropdownButton" onClick={toggleDropdown}>
                 Explore &nbsp; ▼
             </button>
-            {isDropdownVisible && (
+            {(isDropdownVisible && userToken) && (
                 <div className="headerSectionDropdownContent">
-                <a id="characters" onClick={navigateToCharacters}>Characters</a>
-                <a id="items" onClick={navigateToItems}>Items</a>
-                <a id="pickups" onClick={navigateToPickups}>Pickups</a>
-                <a id="achievements" onClick={navigateToAchievements}>Achievements</a>
+                    <a id="characters" onClick={navigateToCharacters}>Characters</a>
+                    <a id="items" onClick={navigateToItems}>Items</a>
+                    <a id="pickups" onClick={navigateToPickups}>Pickups</a>
+                    <a id="achievements" onClick={navigateToAchievements}>Achievements</a>
+                    <a id="profile" onClick={navigateToProfile}>Profile</a>
+                </div>
+            )}
+            {(isDropdownVisible && !userToken) && (
+                <div className="headerSectionDropdownContent">
+                    <a id="characters" onClick={navigateToCharacters}>Characters</a>
+                    <a id="items" onClick={navigateToItems}>Items</a>
+                    <a id="pickups" onClick={navigateToPickups}>Pickups</a>
+                    <a id="achievements" onClick={navigateToAchievements}>Achievements</a>
+                    <a id="login" onClick={navigateToLogin}>Login</a>
                 </div>
             )}
         </div>

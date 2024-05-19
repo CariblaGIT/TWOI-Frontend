@@ -7,3 +7,6 @@ export const charactersProperties = ["Name", "Image", "Unlock method"]
 export const itemsProperties = ["Name", "Image", "Description", "Type"]
 export const pickupsProperties = ["Name", "Image", "Description", "Type"]
 export const achievementsProperties = ["Name", "Image", "Description", "How to"]
+
+export const charactersPropertiesUserLog = ["Name", "Image", "Unlock method", "Got it?"]
+export const achievementsPropertiesUserLog = ["Name", "Image", "Description", "How to", "Got it?"]

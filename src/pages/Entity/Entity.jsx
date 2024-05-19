@@ -1,9 +1,11 @@
 import "./Entity.css";
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { userData } from "../../app/slices/userSlice";
 import { getAllAchievementsService, getAllCharactersService, getAllItemsService, getAllPickupsService } from "../../services/apiCalls";
 import { mainTextAchievements, mainTextCharacters, mainTextItems, mainTextPickups } from '../../utils/entitiesTextConstants';
-import { achievementsProperties, charactersProperties, itemsProperties, pickupsProperties } from '../../utils/entitiesTextConstants';
+import { achievementsProperties, charactersProperties, itemsProperties, pickupsProperties, charactersPropertiesUserLog, achievementsPropertiesUserLog } from '../../utils/entitiesTextConstants';
 
 export const Entity = () => {
     let { type } = useParams()
@@ -11,6 +13,10 @@ export const Entity = () => {
     const [entityHeaderData, setEntityHeaderData] = useState([])
     const [entityText, setEntityText] = useState("")
     const publicServer = "https://twoi-backend-production.up.railway.app/api/public/"
+    const userToken = (useSelector(userData)).credentials.token
+    const userDataToken = (useSelector(userData)).credentials.decoded
+    const userAchievements = userDataToken.achievements
+    const userCharacters = userDataToken.characters
 
     useEffect(() => {
         const getEntityData = async () => {
@@ -19,7 +25,11 @@ export const Entity = () => {
                     case "achievements":
                         const fetchedAchievements = await getAllAchievementsService()
                         setEntityData(fetchedAchievements.data)
-                        setEntityHeaderData(achievementsProperties)
+                        if(userToken){
+                            setEntityHeaderData(achievementsPropertiesUserLog)
+                        } else {
+                            setEntityHeaderData(achievementsProperties)
+                        }
                         setEntityText(mainTextAchievements)
                         break;
                     case "items":
@@ -31,7 +41,11 @@ export const Entity = () => {
                     case "characters":
                         const fetchedCharacters = await getAllCharactersService()
                         setEntityData(fetchedCharacters.data)
-                        setEntityHeaderData(charactersProperties)
+                        if(userToken){
+                            setEntityHeaderData(charactersPropertiesUserLog)
+                        } else {
+                            setEntityHeaderData(charactersProperties)
+                        }
                         setEntityText(mainTextCharacters)
                         break;
                     case "pickups":
@@ -75,6 +89,25 @@ export const Entity = () => {
                             </td>
                             <td className="centerTableContent">{item.description}</td>
                             <td className="centerTableContent">{item.how_to}</td>
+                            {userToken && (
+                                userAchievements.includes(item._id) ? (
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            checked={true}
+                                            onChange={(e) => handleCheckboxChange(e, item._id)}
+                                        />
+                                    </td>
+                                  ) : (
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            checked={false}
+                                            onChange={(e) => handleCheckboxChange(e, item._id)}
+                                        />
+                                    </td>
+                                  )
+                            )}
                         </tr>
                     ));
                 case "items":
@@ -85,7 +118,7 @@ export const Entity = () => {
                                 <img className="itemsImgs" src={publicServer + type + "/" + item.image} alt={item.name} />
                             </td>
                             <td className="centerTableContent">{item.description}</td>
-                            <td>{(item.type).toUpperCase()}</td>
+                            <td>{item.type?.toUpperCase()}</td>
                         </tr>
                     ));
                 case "characters":
@@ -96,9 +129,32 @@ export const Entity = () => {
                                 <img src={publicServer + type + "/" + item.image} alt={item.name} />
                             </td>
                             <td className="centerTableContent">{item.unlock}</td>
+                            {userToken && (
+                                userCharacters.includes(item._id) ? (
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            checked={true}
+                                            onChange={(e) => handleCheckboxChange(e, item._id)}
+                                        />
+                                    </td>
+                                  ) : (
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            checked={false}
+                                            onChange={(e) => handleCheckboxChange(e, item._id)}
+                                        />
+                                    </td>
+                                  )
+                            )}
                         </tr>
                     ));
         }
+    }
+
+    const handleCheckboxChange = (e, id) => {
+        console.log(id);
     }
 
     return (

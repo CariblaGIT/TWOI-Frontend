@@ -30,7 +30,6 @@
 }
 
 .tableEntity{
-    width: 100%;
     background-color: var(--main-red-secondary);
     border-collapse: collapse;
     border-width: 2px;
