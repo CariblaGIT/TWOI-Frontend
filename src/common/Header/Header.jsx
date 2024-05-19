@@ -14,7 +14,7 @@ export const Header = () => {
     if(!locations.includes(location.pathname)){
         return (
             <div className="headerDesign">
-                <img className="logoImgHeader" src="../../../public/logo.png" onClick={navigateHome}/>
+                <img className="logoImgHeader" src="logo.png" onClick={navigateHome}/>
                 <h3 className="headerWebsiteName">The Wiki of Isaac</h3>
                 <HeaderSection/>
             </div>
