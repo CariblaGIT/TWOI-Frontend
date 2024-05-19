@@ -1,7 +1,7 @@
 
 export const validateRegisterData = (type, value) => {
     switch(type){
-        case "name":
+        case "username":
             const regExpUsername = /^[A-Za-zñÑ0-9._]+$/
             if(!regExpUsername.test(value)){
                 return "No correct username inserted"

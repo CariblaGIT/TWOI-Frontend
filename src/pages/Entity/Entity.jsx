@@ -2,7 +2,7 @@ import "./Entity.css";
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import { achievement, userData } from "../../app/slices/userSlice";
+import { achievement, character, userData } from "../../app/slices/userSlice";
 import { getAllAchievementsService, getAllCharactersService, getAllItemsService, getAllPickupsService, interactAchievementService, interactCharacterService } from "../../services/apiCalls";
 import { mainTextAchievements, mainTextCharacters, mainTextItems, mainTextPickups } from '../../utils/entitiesTextConstants';
 import { achievementsProperties, charactersProperties, itemsProperties, pickupsProperties, charactersPropertiesUserLog, achievementsPropertiesUserLog } from '../../utils/entitiesTextConstants';

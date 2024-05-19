@@ -29,12 +29,18 @@ export const userSlice = createSlice({
             ...state,
             ...action.payload
         }
+      },
+      profile: (state, action) => {
+        return {
+            ...state,
+            ...action.payload
+        }
       }
     }
 
 });
 
-export const { login, logout, achievement } = userSlice.actions;
+export const { login, logout, achievement, character, profile } = userSlice.actions;
 
 export const userData = (state) => state.user;
 
