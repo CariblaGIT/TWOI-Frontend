@@ -1,6 +1,13 @@
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+    const navigate = useNavigate()
+
+    const navigateToEntity = (type) => {
+        navigate('/entity/'+type)
+    }
+
     return (
         <div className="homeDesign">
             <div className="homeWelcomeSection">
@@ -14,19 +21,19 @@ export const Home = () => {
             <div className="sectionsSection">
                 <h2 className="headerSectionsSection">Content</h2>
                 <div className="tableContent">
-                    <div className="sectionLink">
+                    <div className="sectionLink" onClick={() => navigateToEntity("achievements")}>
                         <img className="sectionImg" src="../../../public/sections/achievements.png"/>
                         Achievements
                     </div>
-                    <div className="sectionLink">
+                    <div className="sectionLink" onClick={() => navigateToEntity("characters")}>
                         <img className="sectionImg" src="../../../public/sections/characters.png"/>
                         Characters
                     </div>
-                    <div className="sectionLink">
+                    <div className="sectionLink" onClick={() => navigateToEntity("items")}>
                         <img className="sectionImg" src="../../../public/sections/items.png"/>
                         Items
                     </div>
-                    <div className="sectionLink">
+                    <div className="sectionLink" onClick={() => navigateToEntity("pickups")}>
                         <img className="sectionImg" src="../../../public/sections/pickups.png"/>
                         Pickups
                     </div>
