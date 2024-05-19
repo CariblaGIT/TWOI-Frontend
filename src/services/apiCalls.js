@@ -143,3 +143,52 @@ export const getAllAchievementsService = async (token) => {
         return error;
     }
 }
+
+export const interactAchievementService = async (token, achievementId) => {
+    const options = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        }
+    };
+  
+    try {
+        console.log(achievementId);
+        const response = await fetch(`${root}users/achievement/${achievementId}`, options);
+        const data = await response.json();
+
+        console.log(data);
+
+        if (!data.success) {
+            throw new Error(data.message);
+        }
+
+        return data;
+    } catch (error) {
+        return error;
+    }
+}
+
+export const interactCharacterService = async (token, characterId) => {
+    const options = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        }
+    };
+  
+    try {
+        const response = await fetch(`${root}users/character/${characterId}`, options);
+        const data = await response.json();
+
+        if (!data.success) {
+            throw new Error(data.message);
+        }
+
+        return data;
+    } catch (error) {
+        return error;
+    }
+}
