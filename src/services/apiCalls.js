@@ -154,11 +154,8 @@ export const interactAchievementService = async (token, achievementId) => {
     };
   
     try {
-        console.log(achievementId);
         const response = await fetch(`${root}users/achievement/${achievementId}`, options);
         const data = await response.json();
-
-        console.log(data);
 
         if (!data.success) {
             throw new Error(data.message);

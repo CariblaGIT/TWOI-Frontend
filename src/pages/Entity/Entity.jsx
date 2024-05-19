@@ -15,10 +15,10 @@ export const Entity = () => {
     const [entityHeaderData, setEntityHeaderData] = useState([])
     const [entityText, setEntityText] = useState("")
     const publicServer = "https://twoi-backend-production.up.railway.app/api/public/"
-    const userToken = (useSelector(userData)).credentials.token
-    const userDataToken = (useSelector(userData)).credentials.decoded
-    const userAchievements = userDataToken.achievements
-    const userCharacters = userDataToken.characters
+    const userToken = (useSelector(userData))?.credentials?.token
+    const userDataToken = (useSelector(userData))?.credentials?.decoded
+    const userAchievements = userDataToken?.achievements
+    const userCharacters = userDataToken?.characters
 
     useEffect(() => {
         const getEntityData = async () => {
@@ -134,6 +134,7 @@ export const Entity = () => {
                                         type="checkbox"
                                         checked={true}
                                         onClick={(e) => handleCheckboxChange(e, item._id, "character")}
+                                        onChange={(e) => handleChangeInteraction()}
                                     />
                                 </td>
                                 ) : (
@@ -142,6 +143,7 @@ export const Entity = () => {
                                         type="checkbox"
                                         checked={false}
                                         onClick={(e) => handleCheckboxChange(e, item._id, "character")}
+                                        onChange={(e) => handleChangeInteraction()}
                                     />
                                 </td>
                                 )
@@ -149,6 +151,10 @@ export const Entity = () => {
                     </tr>
                 ));
         }
+    }
+
+    const handleChangeInteraction = () => {
+
     }
 
     const handleCheckboxChange = async (e, id, type) => {

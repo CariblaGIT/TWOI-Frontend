@@ -16,7 +16,7 @@ export const Login = () => {
     const [success, setSuccess] = useState(false)
     const [msgSuccess, setMsgSuccess] = useState("")
     const [notAllowToLogin, setNotAllowToLogin] = useState(true)
-    const userToken = (useSelector(userData)).credentials.token
+    const userToken = (useSelector(userData))?.credentials?.token
 
     const [credentials, setCredentials] = useState({
         email : "",

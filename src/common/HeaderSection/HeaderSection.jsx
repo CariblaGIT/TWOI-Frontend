@@ -7,7 +7,7 @@ import { userData } from "../../app/slices/userSlice";
 export const HeaderSection = () => {
     const navigate = useNavigate()
     const [isDropdownVisible, setDropdownVisible] = useState(false)
-    const userToken = (useSelector(userData)).credentials.token
+    const userToken = (useSelector(userData))?.credentials?.token
 
     const navigateToCharacters = () => {
         navigate("entity/characters")

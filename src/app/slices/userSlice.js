@@ -15,7 +15,7 @@ export const userSlice = createSlice({
       logout: (state, action) => {
         return {
           ...state,
-          ...action.payload
+          credentials: null
         }
       },
       achievement: (state, action) => {

@@ -1,15 +1,16 @@
 import "./UserMarks.css";
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { logout, profile, userData } from "../../app/slices/userSlice";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { userData } from "../../app/slices/userSlice";
 import { getAllCharactersService, getAllMarksService } from "../../services/apiCalls";
 
 export const UserMarks = () => {
     const publicServer = "https://twoi-backend-production.up.railway.app/api/public/"
     const [characters, setCharacters] = useState([])
     const [marks, setMarks] = useState([])
-    const [selectedCharacter, setSelectedCharacter] = useState(null)
+    const [selectedCharacter, setSelectedCharacter] = useState({
+        "id" : 0
+    })
     const [charactersLoaded, setCharactersLoaded] = useState(false)
     const [marksLoaded, setMarksLoaded] = useState(false)
     const [characterDropdownVisible, setCharacterDropdownVisible] = useState(false)

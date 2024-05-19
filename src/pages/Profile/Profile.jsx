@@ -97,7 +97,6 @@ export const Profile = () => {
         try {
             if(avatarToUpload === undefined){
                 const fetched = await UpdateProfileWithoutAvatar(userToken, user)
-                console.log(fetched);
                 setUser({
                     username: fetched.data.username,
                 })
@@ -134,7 +133,7 @@ export const Profile = () => {
 
     const logoutFunction = () => {
         dispatch(logout({ credentials: "" }))
-        navigate("/login")
+        navigate("/home")
     }
 
     const navigateToMarks = () => {

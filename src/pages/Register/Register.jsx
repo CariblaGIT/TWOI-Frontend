@@ -13,7 +13,7 @@ export const Register = () => {
     const [success, setSuccess] = useState(false)
     const [msgSuccess, setMsgSuccess] = useState("")
     const [notAllowToRegister, setNotAllowToRegister] = useState(true)
-    const userToken = (useSelector(userData)).credentials.token
+    const userToken = (useSelector(userData))?.credentials?.token
 
     const [user, setUser] = useState({
         username: "",
@@ -34,8 +34,6 @@ export const Register = () => {
     }, [userToken])
 
     useEffect(() => {
-        console.log(user);
-        console.log(userError);
         if(user.username !== "" && user.email !== "" && user.password !== ""){
             if((userError.usernameError == undefined || userError.usernameError == "") && 
             (userError.emailError == undefined || userError.emailError == "") && 
