@@ -32,7 +32,7 @@ This website is a project focused on React facilities, concretely on the impleme
 
 ## 🔗 Backend
 
-This project is developed based on a [project](https://github.com/CariblaGIT/TWOI-Backend) that I have made for making possible all the consults that are actually done in this application
+This project is developed based on a [project](https://master.d3vk6brqdjmocl.amplifyapp.com/home/) that I have made for making possible all the consults that are actually done in this application
 
 ## ⌨️ Stack
 <div align="center">
