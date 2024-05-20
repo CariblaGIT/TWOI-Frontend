@@ -23,8 +23,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    border: 1px solid var(--grey-box-boundary)
 }
 
 .appNameRegister{
@@ -100,14 +98,4 @@
 
     border: 1px solid var(--grey-box-boundary);
     user-select: none;
-}
-
-@media (max-width: 600px) {
-    .registerForm{
-        border-width: 0; 
-    }
-
-    .loginContent{
-        border-width: 0; 
-    }
 }

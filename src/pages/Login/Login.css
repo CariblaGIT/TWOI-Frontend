@@ -43,7 +43,6 @@
     align-items: center;
     justify-content: center;
 
-    border: 1px solid var(--grey-box-boundary);
     border-radius: 0.5em;
     user-select: none;
 }
@@ -92,14 +91,4 @@
 
 .loginError:empty, .loginSuccess:empty{
     display: none;
-}
-
-@media (max-width: 525px) {
-    .loginForm{
-        border-width: 0; 
-    }
-
-    .registerContent{
-        border-width: 0; 
-    }
 }
