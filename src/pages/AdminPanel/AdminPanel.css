@@ -1,0 +1,109 @@
+.adminPanelDesign{
+    min-height: 92vh;
+    width: 100vw;
+    background-color: #181818;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.adminPanelHeader{
+    font-family: "Press Start 2P", system-ui;
+    background-color: var(--main-red-secondary);
+    box-shadow: 0px 0px 4px 2px var(--main-red), inset 0px 0px 4px 5px var(--main-red-transparent);
+    color: #ffffff;
+    border-radius: .1em;
+    margin: .5em;
+}
+
+.adminContent{
+    min-height: 88vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.adminUsersTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--main-red-secondary);
+    color: #FFFFFF;
+    margin: 0.2em;
+}
+
+.adminUsersTable thead {
+    display: none; /* Hide the headers on small screens */
+}
+
+.adminUsersTable tbody tr {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc; /* Add border to separate rows */
+    border-radius: 5px; /* Optional: Add some rounding for aesthetics */
+    overflow: hidden;
+}
+
+.adminUsersTable tbody tr td {
+    display: block;
+    text-align: right;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.adminUsersTable tbody tr td::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+    text-align: left;
+    width: calc(50% - 20px); /* Adjust to avoid overlapping */
+    box-sizing: border-box;
+}
+
+.adminUsersTable tbody tr td:not(:first-child) {
+    padding-left: calc(50% + 10px);
+}
+
+@media (min-width: 600px) {
+    .adminUsersTable thead {
+        display: table-header-group; /* Show the headers on larger screens */
+    }
+
+    .adminUsersTable tbody tr {
+        display: table-row;
+        width: auto;
+        margin-bottom: 0;
+        border: none;
+        background: transparent;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    .adminUsersTable tbody tr td {
+        display: table-cell;
+        text-align: right;
+        padding: 8px;
+        position: static;
+        width: auto;
+        box-sizing: border-box;
+    }
+
+    .adminUsersTable tbody tr td::before {
+        display: none;
+    }
+
+    .adminUsersTable tbody tr td:not(:first-child) {
+        padding-left: 0;
+    }
+}
+
