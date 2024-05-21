@@ -8,7 +8,7 @@ export const HeaderSection = () => {
     const navigate = useNavigate()
     const [isDropdownVisible, setDropdownVisible] = useState(false)
     const userToken = (useSelector(userData))?.credentials?.token
-    const userRole = (useSelector(userData))?.credentials?.decoded.role
+    const userRole = (useSelector(userData))?.credentials?.decoded?.role
 
     const navigateToCharacters = () => {
         navigate("entity/characters")
