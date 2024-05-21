@@ -9,6 +9,7 @@ import { userData } from "../../app/slices/userSlice";
 import { loginService } from "../../services/apiCalls";
 import { InputAuth } from "../../common/InputAuth/InputAuth";
 import { ButtonAuth } from "../../common/ButtonAuth/ButtonAuth";
+import icon from '../../../public/icon.png'; // Tell webpack this JS file uses this image
 
 export const Login = () => {
     const navigate = useNavigate()
@@ -86,7 +87,7 @@ export const Login = () => {
     return (
         <div className="loginDesign">
             <div className="loginForm">
-                <img className="isaacIconLogin" src="/icon.png"/>
+                <img className="isaacIconLogin" src={icon}/>
                 <h2 className="appName">The Wiki of Isaac</h2>
                 <InputAuth
                     className={"inputAuthForm"} 
