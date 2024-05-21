@@ -8,6 +8,7 @@ export const HeaderSection = () => {
     const navigate = useNavigate()
     const [isDropdownVisible, setDropdownVisible] = useState(false)
     const userToken = (useSelector(userData))?.credentials?.token
+    const userRole = (useSelector(userData))?.credentials?.decoded.role
 
     const navigateToCharacters = () => {
         navigate("entity/characters")
@@ -39,6 +40,11 @@ export const HeaderSection = () => {
         hideDropdown()
     }
 
+    const navigateToAdmin = () => {
+        navigate("admin")
+        hideDropdown()
+    }
+
     const toggleDropdown = () => {
         setDropdownVisible(!isDropdownVisible);
     }
@@ -59,6 +65,11 @@ export const HeaderSection = () => {
                     <a id="pickups" onClick={navigateToPickups}>Pickups</a>
                     <a id="achievements" onClick={navigateToAchievements}>Achievements</a>
                     <a id="profile" onClick={navigateToProfile}>Profile</a>
+                    {userRole === "super_admin" ? (
+                        <a id="admin" onClick={navigateToAdmin}>Admin</a>
+                    ) : (
+                        <></>
+                    )}
                 </div>
             )}
             {(isDropdownVisible && !userToken) && (
