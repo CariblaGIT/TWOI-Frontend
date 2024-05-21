@@ -86,7 +86,7 @@ export const Login = () => {
     return (
         <div className="loginDesign">
             <div className="loginForm">
-                <img className="isaacIconLogin" src="../../../public/icon.png"/>
+                <img className="isaacIconLogin" src="/icon.png"/>
                 <h2 className="appName">The Wiki of Isaac</h2>
                 <InputAuth
                     className={"inputAuthForm"} 

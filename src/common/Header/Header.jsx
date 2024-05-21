@@ -1,7 +1,6 @@
 import "./Header.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { HeaderSection } from "../HeaderSection/HeaderSection";
-import logo from '../../../public/logo.png'; // Tell webpack this JS file uses this image
 
 export const Header = () => {
     const locations = ["/register", "/login"]
@@ -15,7 +14,7 @@ export const Header = () => {
     if(!locations.includes(location.pathname)){
         return (
             <div className="headerDesign">
-                <img className="logoImgHeader" src={logo} onClick={navigateHome}/>
+                <img className="logoImgHeader" src="/logo.png" onClick={navigateHome}/>
                 <h3 className="headerWebsiteName">The Wiki of Isaac</h3>
                 <HeaderSection/>
             </div>
