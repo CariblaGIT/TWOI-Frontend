@@ -3,7 +3,9 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { userData } from "../../app/slices/userSlice";
-import { getUsersAsAdminService } from "../../services/apiCalls";
+import { deleteUserService, getUsersAsAdminService } from "../../services/apiCalls";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export const AdminPanel = () => {
     const navigate = useNavigate()
@@ -27,6 +29,18 @@ export const AdminPanel = () => {
 
         if(!usersLoaded) { getAllUsers() }
     }, [users])
+
+    const deleteUser = async (userId) => {
+        try {
+            const fetched = await deleteUserService(userToken, userId)
+            if(fetched.success){
+                const newUserList = users.filter(item => item._id !== userId);
+                setUsers(newUserList)
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <div className="adminPanelDesign">
@@ -54,7 +68,11 @@ export const AdminPanel = () => {
                                         <td data-label="Username">{item.username}</td>
                                         <td data-label="Email">{item.email}</td>
                                         <td data-label="Role">{item.role}</td>
-                                        <td data-label="Options">Options Here</td>
+                                        <td data-label="Options">
+                                            <button className="btn-icon deleteUserButton" onClick={() => deleteUser(item._id)}>
+                                                <FontAwesomeIcon icon={faTrash} />
+                                            </button>
+                                        </td>
                                     </tr>
                                 )
                         })}

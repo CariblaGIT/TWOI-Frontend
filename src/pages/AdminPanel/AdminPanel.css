@@ -39,14 +39,14 @@
 }
 
 .adminUsersTable thead {
-    display: none; /* Hide the headers on small screens */
+    display: none;
 }
 
 .adminUsersTable tbody tr {
     display: block;
     width: 100%;
-    border: 1px solid #ccc; /* Add border to separate rows */
-    border-radius: 5px; /* Optional: Add some rounding for aesthetics */
+    border: 1px solid #ccc; 
+    border-radius: 5px;
     overflow: hidden;
 }
 
@@ -62,7 +62,6 @@
 .adminUsersTable tbody tr td::before {
     content: attr(data-label);
     position: absolute;
-    top: 10px;
     left: 10px;
     font-weight: bold;
     text-align: left;
@@ -72,6 +71,18 @@
 
 .adminUsersTable tbody tr td:not(:first-child) {
     padding-left: calc(50% + 10px);
+}
+
+.deleteUserButton{
+    background-color: var(--main-dark-red);
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.deleteUserButton:hover{
+    background-color: var(--main-dark-red-secondary);
+    transition: 0.5s;
 }
 
 @media (min-width: 600px) {
@@ -91,7 +102,7 @@
 
     .adminUsersTable tbody tr td {
         display: table-cell;
-        text-align: right;
+        text-align: center;
         padding: 8px;
         position: static;
         width: auto;
