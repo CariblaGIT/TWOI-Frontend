@@ -69,9 +69,13 @@ export const AdminPanel = () => {
                                         <td data-label="Email">{item.email}</td>
                                         <td data-label="Role">{item.role}</td>
                                         <td data-label="Options">
-                                            <button className="btn-icon deleteUserButton" onClick={() => deleteUser(item._id)}>
-                                                <FontAwesomeIcon icon={faTrash} />
-                                            </button>
+                                            {item.role !== "super_admin" ? (
+                                                <button className="btn-icon deleteUserButton" onClick={() => deleteUser(item._id)}>
+                                                    <FontAwesomeIcon icon={faTrash} />
+                                                </button>
+                                            ) : (
+                                                <></>
+                                            )}
                                         </td>
                                     </tr>
                                 )
