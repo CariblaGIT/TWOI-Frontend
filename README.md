@@ -32,7 +32,7 @@ This website is a project focused on React facilities, concretely on the impleme
 
 ## 🔗 Backend
 
-This project is developed based on a [project](https://master.d3vk6brqdjmocl.amplifyapp.com/home/) that I have made for making possible all the consults that are actually done in this application
+This project is developed based on a [project](https://github.com/CariblaGIT/TWOI-Backend) that I have made for making possible all the consults that are actually done in this application
 
 ## ⌨️ Stack
 <div align="center">
@@ -69,7 +69,7 @@ This project is developed based on a [project](https://master.d3vk6brqdjmocl.amp
 
 Follow the steps to emulate the project in your local device. But is not necessary because the project has been uploaded to AWS, so you can skip the installation and use the following URL to make all the consults in front of your localhost one.
 <div align="center">
-<a href="https://cariblagit.github.io/FakebookReact/">🚀 App deployed 🚀</a>
+<a href="https://master.d3vk6brqdjmocl.amplifyapp.com/home/">🚀 App deployed 🚀</a>
 </div>
 
 1. Clone repo
